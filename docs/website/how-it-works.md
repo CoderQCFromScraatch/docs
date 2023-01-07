@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # How TurboWarp runs Scratch projects 10-100x faster
 
-TurboWarp uses a *compiler* to while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
+TurboWarp uses a *compiler* while Scratch uses an *interpreter*. This allows TurboWarp to run somewhere between 10-100x faster depending on the project, but it makes live script editing [impracticable](#live-script-editing).
 
 export const Test = ({name, id, scratch, tw}) => (
   <tr>
@@ -112,9 +112,9 @@ Things to notice:
 
  - No more looking up block IDs or opcodes: it's just JavaScript.
  - No more looking up inputs manually: they're just JavaScript arguments.
- - No more manual state maintaining: it's just JavaScript.
+ - No more manual state maintenance: it's just JavaScript.
  - As this is a single JavaScript function, we can't easily implement [live script editing](#live-script-editing)
- - If the JavaScript JIT notices that a certain variable is always a number, it can theoertically optimize accordingly.
+ - If the JavaScript JIT notices that a certain variable is always a number, it can theoretically optimize accordingly.
  - This JavaScript looks very strange compared to typical human-written JavaScript and runs slower because we maintain compatibility with edge case Scratch behaviors.
  - We manually formatted the JavaScript and renamed some variables to make it more readable. The real code uses variable names like `b0` and has no formatting.
 
@@ -167,4 +167,4 @@ return function fun1_sort () {
 
 ### Live script editing {#live-script-editing}
 
-If you start a script using the compiler, you won't be able to move, remove, or add blocks and have the changes be reflected in real time as they would be in Scratch. The script has to be restarted for changes to apply. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not yet.
+If you start a script using the compiler, you won't be able to move, remove, or add blocks and have the changes reflected in real-time as they would be in Scratch. The script has to be restarted for changes to apply. We believe there are some ways we could make this work, but they will hurt performance or add significant complexity. It's something we want to implement eventually, but not yet.
